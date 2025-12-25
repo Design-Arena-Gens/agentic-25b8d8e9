@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  min-height: 100vh;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #E1306C 0%, #833AB4 50%, #FD1D1D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+.gradient-border {
+  position: relative;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #E1306C 0%, #833AB4 50%, #FD1D1D 100%);
+  background-clip: padding-box;
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.scroll-fade {
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
